@@ -1,5 +1,12 @@
 from openai import OpenAI
 from dotenv import load_dotenv
+from pydub import AudioSegment
+
+arquivo_selecionado = "ja começou a jornada full stack.mp4"
+extensao_arquivo = arquivo_selecionado.split(".")[1]
+audio = AudioSegment.from_file(file=arquivo_selecionado, format=extensao_arquivo)
+
+audio.export("audio.mp3", format="mp3")
 
 load_dotenv()
 
